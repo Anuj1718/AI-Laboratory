@@ -32,7 +32,7 @@ This repository contains practicals and assignments for the Artificial Intellige
 - Python
 - Jupyter Notebook
 - VS-Code
-- 
+  
 ## Folder Structure:
 - `Group A`: Algorithms for Search and Graph Problems
 - `Group B`: Constraint Satisfaction, Chatbot, and Customer Applications
