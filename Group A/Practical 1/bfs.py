@@ -2,7 +2,7 @@
 import collections
 
 def bfs(graph, root): #root as in start element
-    visited = set() #
+    visited = set()
     queue = collections.deque([root]) #queue = [root], this is not an ideal way to implement a queue in python, but it works for this example.  
 
     while queue: #while queue is not empty
