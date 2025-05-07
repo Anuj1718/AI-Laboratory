@@ -63,3 +63,115 @@ print("Sorted list:", numbers)
 # Looping one more time (i.e., to i = n-1) is unnecessary.
 
 # There’s no next element to compare with, so the inner loop would not run at all for that iteration.
+
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:  # swap if out of order
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Example
+arr = [5, 2, 9, 1, 5, 6]
+bubble_sort(arr)
+print(arr)
+
+
+# Bubble Sort compares adjacent elements and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+
+# It "bubbles up" the largest unsorted element to its correct position in each pass.
+
+# ime Complexity:
+# Worst Case: O(n²) (when reversed)
+
+# Average Case: O(n²)
+
+# Best Case: O(n) (already sorted)
+
+# 🔸 Space Complexity:
+# O(1) (in-place sorting, no extra space)
+
+# Input:
+# arr = [5, 1, 4, 2]
+
+# Pass 1:
+
+# Compare 5 and 1 → swap → [1, 5, 4, 2]
+
+# Compare 5 and 4 → swap → [1, 4, 5, 2]
+
+# Compare 5 and 2 → swap → [1, 4, 2, 5]
+
+# Pass 2:
+
+# Compare 1 and 4 → OK
+
+# Compare 4 and 2 → swap → [1, 2, 4, 5]
+
+# Compare 4 and 5 → OK
+
+# Pass 3:
+
+# Compare 1 and 2 → OK
+
+# Compare 2 and 4 → OK
+
+# Sorted: [1, 2, 4, 5]
+
+# 🔸 Explanation:
+# Selection Sort finds the minimum element in the unsorted part and swaps it with the first element of the unsorted part. Repeats for the rest of the array.
+
+# 🔸 Example:
+# Input:
+# arr = [5, 1, 4, 2]
+
+# Step 1:
+
+# Find min in [5, 1, 4, 2] → 1
+
+# Swap 1 with 5 → [1, 5, 4, 2]
+
+# Step 2:
+
+# Find min in [5, 4, 2] → 2
+
+# Swap 2 with 5 → [1, 2, 4, 5]
+
+# Step 3:
+
+# Find min in [4, 5] → 4
+
+# Already in place
+
+# Sorted: [1, 2, 4, 5]
+
+# 🔸 Time Complexity:
+# Worst Case: O(n²)
+
+# Average Case: O(n²)
+
+# Best Case: O(n²) (still checks all elements)
+
+# 🔸 Space Complexity:
+# O(1) (in-place)
+
+# ✅ Summary:
+# Algorithm	Best TC	Worst TC	SC	Stable?
+# Bubble Sort	O(n)	O(n²)	O(1)	Yes
+# Selection Sort	O(n²)	O(n²)	O(1)	No
+
+#  What is a "Stable" Sorting Algorithm?
+# A stable sorting algorithm preserves the relative order of elements with equal keys (values).
+
+# 🔸 In simple terms:
+# If two elements are equal, and one comes before the other in the original array, they will remain in the same order after sorting.
+
+# Stability of Common Sorts:
+# Algorithm	Stable?
+# Bubble Sort	✅ Yes
+# Selection Sort	❌ No
+# Insertion Sort	✅ Yes
+# Merge Sort	✅ Yes
+# Quick Sort	❌ No
+# Python’s sort()	✅ Yes (Timsort)
